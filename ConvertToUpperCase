@@ -1,18 +1,107 @@
 package org.example;
 
 public class StringToUpperCase {
-    public static void convertToUpperCase(String str) {
+    public static String convertToUpperCase(String str) {
         char[] ch = str.toCharArray();
         for (int i = 0; i < ch.length; i++) {
             if (Character.isLetter(ch[i]) && Character.isLowerCase(ch[i])) {
                 ch[i] = (char) (ch[i] - 32);
             }
         }
-        System.out.println(new String(ch));
+       return new String(ch);
+    }
+    public static boolean testCase1(){
+        String input=null;
+        String expected=null;
+        String output=convertToUpperCase(null);
+        if(output.equals(expected)){
+            return true;
+        }
+        return false;
+    }
+    public static boolean testCase2(){
+        String input="";
+        String expected="";
+        String output=convertToUpperCase(input);
+        if(output.equals(expected)){
+            return true;
+        }
+        return false;
+    }
+    public static boolean testCase3(){
+        String input="All Good";
+        String expected="ALL GOOD";
+        String output=convertToUpperCase(input);
+        if(output.equals(expected)){
+            return true;
+        }
+        return false;
+    }
+    public static boolean testCase4(){
+        String input="123";
+        String expected="123";
+        String output=convertToUpperCase(input);
+        if(output.equals(expected)){
+            return true;
+        }
+        return false;
+    }
+    public static boolean testCase5(){
+        String input=" ";
+        String expected=" ";
+        String output=convertToUpperCase(input);
+        if(output.equals(expected)){
+            return true;
+        }
+        return false;
+    }
+    public static boolean testCase6(){
+        String input="a";
+        String expected="A";
+        String output=convertToUpperCase(input);
+        if(output.equals(expected)){
+            return true;
+        }
+        return false;
+    }
+    public static boolean testCase7(){
+        String input="ALL GOOD";
+        String expected="ALL GOOD";
+        String output=convertToUpperCase(input);
+        if(output.equals(expected)){
+            return true;
+        }
+        return false;
+    }
+    public static boolean testCase8(){
+        String input="@#$%D";
+        String expected="@#$%D";
+        String output=convertToUpperCase(input);
+        if(output.equals(expected)){
+            return true;
+        }
+        return false;
+    }
+    public static boolean testCase9(){
+        String input=" Bhargavi@123 ";
+        String expected=" Bhargavi@123 ";
+        String output=convertToUpperCase(input);
+        if(output.equals(expected)){
+            return true;
+        }
+        return false;
     }
 
     public static void main(String[] args) {
-        convertToUpperCase("Hello World!");
+       System.out.println( testCase1());
+        System.out.println(testCase2());
+        System.out.println(testCase3());
+        System.out.println(testCase4());
+        System.out.println(testCase5());
+        System.out.println(testCase6());
+        System.out.println(testCase7());
+        System.out.println(testCase8());
+        System.out.println(testCase9());
 
     }
 }
